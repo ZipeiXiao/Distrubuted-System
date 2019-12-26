@@ -1,0 +1,10 @@
+onClick - UI
+GetPictureSearch.search - UI
+doInBackground - HELPER
+AsyncFlickrSearch.search - HELPER
+getRemoteXML - HELPER
+getRemoteImage - HELPER
+onPostExecute - HELPER
+pictureReady - UI
+
+AsyncTask provides a way to separate into the Helper Thread. 

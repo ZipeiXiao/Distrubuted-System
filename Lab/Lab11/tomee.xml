@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+  <!-- see http://tomee.apache.org/containers-and-resources.html -->
+
+  <!-- activate next line to be able to deploy applications in apps -->
+  <!-- <Deployments dir="apps" /> -->
+
+
+  <!-- BEGIN: Add for Project 6 -->
+
+  <Resource id="MyJmsResourceAdapter" type="ActiveMQResourceAdapter">
+    BrokerXmlConfig =  broker:(tcp://localhost:61616)
+    ServerUrl       =  tcp://localhost:61616
+  </Resource>
+
+  <Resource id="myConnectionFactory" type="javax.jms.ConnectionFactory">
+    ResourceAdapter = MyJmsResourceAdapter
+  </Resource>
+
+  <Container id="MyJmsMdbContainer" ctype="MESSAGE">
+    ResourceAdapter = MyJmsResourceAdapter
+  </Container>
+
+  <Resource id="PITsnapshot" type="javax.jms.Queue"/>
+  <Resource id="PITmonitor" type="javax.jms.Queue"/>
+  <Resource id="PITplayer0" type="javax.jms.Queue"/>
+  <Resource id="PITplayer1" type="javax.jms.Queue"/>
+  <Resource id="PITplayer2" type="javax.jms.Queue"/>
+  <Resource id="PITplayer3" type="javax.jms.Queue"/>
+  <Resource id="PITplayer4" type="javax.jms.Queue"/>
+  <Resource id="PITplayer5" type="javax.jms.Queue"/>
+
+  <!-- For JMS Resources and MDB Container configuration information, see:
+    http://tomee.apache.org/tomee-8.0/docs/jms-resources-and-mdb-container.html
+  -->
+
+  <!--  END: for Project 6 -->
+
+</tomee>
